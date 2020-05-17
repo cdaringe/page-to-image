@@ -1,5 +1,6 @@
 # docker build -t cdaringe/site-to-image .
 # docker run --rm cdaringe/site-to-image --url https://google.com --filename google.png
+# docker run --rm --cap-add=SYS_ADMIN -v $PWD/out:/out cdaringe/site-to-image --url https://google.com --filename /out/wee.png
 FROM node:12-slim
 
 # Install latest chrome dev package and fonts to support major charsets (Chinese, Japanese, Arabic, Hebrew, Thai and a few others)
