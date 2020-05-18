@@ -4,6 +4,16 @@ require("perish");
 
 async function go() {
   const cliArgs = yargs
+  .option("width", {
+    alias: "w",
+    describe: "width",
+    default: 600,
+  })
+  .option("height", {
+    alias: "h",
+    describe: "height",
+    default: 800,
+  })
     .option("url", {
       alias: "u",
       describe: "https://my.page",
@@ -18,6 +28,10 @@ async function go() {
   await getImage({
     url: args.url,
     filename: args.filename,
+    viewport: {
+      width: args.width,
+      height: args.height
+    }
   });
 }
 
